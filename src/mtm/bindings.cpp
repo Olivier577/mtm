@@ -3,11 +3,11 @@
 
 namespace py = pybind11;
 
-PYBIND11_PLUGIN(python_cpp_example) {
-  py::module m("python_cpp_example", R"doc(
+PYBIND11_PLUGIN(mtm) {
+  py::module m("mtm", R"doc(
         Python module
         -----------------------
-        .. currentmodule:: python_cpp_example
+        .. currentmodule:: mtm
         .. autosummary::
            :toctree: _generate
            

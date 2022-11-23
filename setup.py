@@ -69,7 +69,7 @@ class CMakeBuild(build_ext):
         subprocess.check_call(['cmake', '--build', '.'] + build_args,
                               cwd=self.build_temp)
         # Copy *_test file to tests directory
-        test_bin = os.path.join(self.build_temp, 'python_cpp_example_test')
+        test_bin = os.path.join(self.build_temp, 'mtm_test')
         self.copy_test_file(test_bin)
         print()  # Add an empty line for cleaner output
 
@@ -93,15 +93,15 @@ class CMakeBuild(build_ext):
         copymode(src_file, dest_file)
 
 setup(
-    name='python_cpp_example',
+    name='mtm',
     version='0.2',
-    author='Benjamin Jack',
+    author='Olivier Masset',
     author_email='benjamin.r.jack@gmail.com',
     description='A hybrid Python/C++ test project',
     long_description='',
     packages=find_packages('src'),
     package_dir={'':'src'},
-    ext_modules=[CMakeExtension('python_cpp_example/python_cpp_example')],
+    ext_modules=[CMakeExtension('mtm/mtm')],
     cmdclass=dict(build_ext=CMakeBuild),
     test_suite='tests',
     zip_safe=False,
